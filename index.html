@@ -23,12 +23,30 @@
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
-      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
-      color:var(--fg); background: radial-gradient(1200px 800px at 10% -10%, #16203f 0%, transparent 55%),
-                        radial-gradient(900px 600px at 110% 10%, #0e1736 0%, transparent 50%),
-                        linear-gradient(180deg, var(--bg), var(--bg2));
-      display:flex; align-items:center; justify-content:center; padding:32px;
-    }
+  margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+  color:var(--fg);
+
+  /* Fondo global: imagen + overlay para contraste + toques de gradiente */
+  background:
+    linear-gradient(rgba(11,16,32,.62), rgba(11,16,32,.68)),           /* overlay oscuro */
+    url('/bg-hana-bw.png') center / cover no-repeat fixed,             /* TU imagen */
+    radial-gradient(1200px 800px at 10% -10%, #16203f 0%, transparent 55%),
+    radial-gradient(900px 600px at 110% 10%, #0e1736 0%, transparent 50%),
+    linear-gradient(180deg, var(--bg), var(--bg2));
+
+  display:flex; align-items:center; justify-content:center; padding:32px;
+}
+
+/* En móviles quitamos el attachment fijo para evitar tirones */
+@media (max-width: 860px){
+  body{
+    background:
+      linear-gradient(rgba(11,16,32,.62), rgba(11,16,32,.72)),
+      url('/bg-hana-bw.png') center / cover no-repeat,
+      linear-gradient(180deg, var(--bg), var(--bg2));
+  }
+}
+
     .wrap{max-width:1100px; width:100%;}
     header{display:flex; align-items:center; gap:18px;}
     .logo{display:grid; place-items:center; width:64px; height:64px; border-radius:16px;
@@ -64,6 +82,15 @@
     .btn:hover{transform:translateY(-2px); box-shadow:0 12px 24px rgba(0,0,0,.25)}
     .btn--primary{background:linear-gradient(90deg,var(--accent),#fb7185); color:#fff}
     .btn--ghost{background:transparent; color:var(--fg); border:1px solid rgba(255,255,255,.18)}
+
+    /* Social icons row */
+    .social{display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-top:10px}
+    .social a{display:inline-flex; width:36px; height:36px; align-items:center; justify-content:center;
+  border-radius:9999px; border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.04); transition:.2s transform,.2s box-shadow,.2s opacity}
+    .social a:hover{transform:translateY(-1px); box-shadow:0 8px 18px rgba(0,0,0,.25)}
+    .social svg{width:18px; height:18px; fill:#fff; opacity:.92}
+
 
     .card-right{position:relative; overflow:hidden}
     .petal{position:absolute; width:10px; height:10px; background: radial-gradient(circle at 30% 30%, #ffd1de, #ff6b8b);
@@ -113,6 +140,25 @@
           <a class="btn btn--primary" href="https://youtube.com/@chalecostudio" target="_blank" rel="noopener">YouTube</a>
           <a class="btn btn--ghost"   href="https://open.spotify.com/user/chalecus?si=43fffe473dc24cad" target="_blank" rel="noopener">Spotify</a>
           <a class="btn"              href="mailto:info@chalecostudios.com">Contacto</a>
+          <div class="social" aria-label="Redes sociales">
+          <!-- Patreon -->
+          <a href="https://patreon.com/ChalecoStudios" target="_blank" rel="noopener" aria-label="Patreon">
+          <svg viewBox="0 0 24 24"><path d="M3 3h4v18H3V3zm9 0a9 9 0 110 18 9 9 0 010-18z"/></svg>
+          </a>
+          <!-- Instagram -->
+          <a href="https://instagram.com/chalecostudios" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 5a5 5 0 100 10 5 5 0 000-10zm6-1a1 1 0 100 2 1 1 0 000-2zM12 9a3 3 0 110 6 3 3 0 010-6z"/></svg>
+          </a>
+          <!-- X / Twitter -->
+          <a href="https://x.com/@chalecostudios" target="_blank" rel="noopener" aria-label="X">
+          <svg viewBox="0 0 24 24"><path d="M3 3l8.4 9.7L3 21h2.6l6.7-6.9L18.9 21H21l-8-9.5L20.7 3H18.2l-6.1 6.4L6.2 3H3z"/></svg>
+          </a>
+          <!-- TikTok -->
+          <a href="https://www.tiktok.com/@chalecostudios" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg viewBox="0 0 24 24"><path d="M14 3h3a5 5 0 005 5v3a8 8 0 01-8-8v12a6 6 0 11-6-6h1v3h-1a3 3 0 103 3V3z"/></svg>
+          </a>
+      </div>
+
 
         </div>
       </div>
