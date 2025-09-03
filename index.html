@@ -82,6 +82,58 @@ body{
     .btn:hover{transform:translateY(-2px); box-shadow:0 12px 24px rgba(0,0,0,.25)}
     .btn--primary{background:linear-gradient(90deg,var(--accent),#fb7185); color:#fff}
     .btn--ghost{background:transparent; color:var(--fg); border:1px solid rgba(255,255,255,.18)}
+    /* —— PATCH MOBILE Chaleco Studios ——————————————————— */
+/* Pegar debajo de tu CSS actual, sin borrar lo anterior */
+@media (max-width: 860px){
+
+  /* respiración lateral en móvil */
+  .wrap{ padding: 0 12px; width: 100%; }
+
+  /* panel a ancho completo y menos vidrio */
+  .panel{
+    width: 100%;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: none;
+    backdrop-filter: none;
+    background: rgba(0,0,0,.35); /* si lo querés limpio: 'transparent' */
+  }
+
+  /* hero en una sola columna ya lo tenés, ajusto gaps */
+  .hero{ margin: 16px 0; gap: 16px; }
+
+  /* countdown en 2 columnas y más compacto */
+  .countdown{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .cd{
+    flex: 1 1 auto;
+    min-width: unset;
+    padding: 12px 10px;
+    border-radius: 12px;
+  }
+  .cd b{ font-size: 28px; line-height: 1; }
+  .cd span{ font-size: 11px; letter-spacing: .06em; }
+
+  /* CTAs en columna, full-width */
+  .cta{
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin-top: 14px;
+  }
+  .cta .btn{
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 12px;
+  }
+
+  /* un poco de aire antes de la ilustración inferior */
+  section, .section, .hero{ margin-bottom: 24px; }
+}
+
 
     /* Social icons row */
     .social{display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-top:10px}
