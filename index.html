@@ -27,9 +27,9 @@
     color:var(--fg);
 
   /* Fondo global: imagen + overlay para contraste + toques de gradiente */
-    background:
+    background-position: 70% center,
     linear-gradient(rgba(11,16,32,.62), rgba(11,16,32,.68)),           /* overlay oscuro */
-    url('/bg-hana-bw.png') center / cover no-repeat fixed,             /* TU imagen */
+    url('assets/bg-hana-bw.png') center / cover no-repeat fixed,             /* TU imagen */
     radial-gradient(1200px 800px at 10% -10%, #16203f 0%, transparent 55%),
     radial-gradient(900px 600px at 110% 10%, #0e1736 0%, transparent 50%),
     linear-gradient(180deg, var(--bg), var(--bg2));
@@ -40,7 +40,7 @@
 /* En móviles quitamos el attachment fijo para evitar tirones */
 @media (max-width: 860px){
     body{
-    background:
+      background: center;}
       linear-gradient(rgba(11,16,32,.62), rgba(11,16,32,.72)),
       url('/bg-hana-bw.png') center / cover no-repeat,
       linear-gradient(180deg, var(--bg), var(--bg2));
