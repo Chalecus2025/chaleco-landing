@@ -20,32 +20,32 @@
       --card:#121833;
       --ring: 0 0 0 2px var(--accent);
     }
-    {box-sizing:border-box}
-    html,body{height:100%}
-    body{
-    margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
-    color:var(--fg);
+    *{box-sizing:border-box}
+html,body{height:100%}
 
-  /* Fondo global: imagen + overlay para contraste + toques de gradiente */
-    background-position: 70% center,
-    linear-gradient(rgba(11,16,32,.62), rgba(11,16,32,.68)),           /* overlay oscuro */
-    url('assets/bg-hana-bw.png') center / cover no-repeat fixed,             /* TU imagen */
-    radial-gradient(1200px 800px at 10% -10%, #16203f 0%, transparent 55%),
-    radial-gradient(900px 600px at 110% 10%, #0e1736 0%, transparent 50%),
+body{
+  margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+  color:var(--fg);
+
+  /* Fondo global: overlay + TU imagen + gradiente */
+  background:
+    linear-gradient(rgba(11,16,32,.58), rgba(11,16,32,.66)),        /* overlay oscuro */
+    url('assets/bg-hana-bw.png') 70% center / cover no-repeat fixed,/* <-- ruta+posicion */
     linear-gradient(180deg, var(--bg), var(--bg2));
 
-    display:flex; align-items:center; justify-content:center; padding:32px;
-    }
+  display:flex; align-items:center; justify-content:center; padding:32px;
+}
 
-/* En móviles quitamos el attachment fijo para evitar tirones */
+/* En móviles quitamos el fixed para evitar tirones y centramos */
 @media (max-width: 860px){
-    body{
-      background: center;}
-      linear-gradient(rgba(11,16,32,.62), rgba(11,16,32,.72)),
-      url('/bg-hana-bw.png') center / cover no-repeat,
+  body{
+    background:
+      linear-gradient(rgba(11,16,32,.58), rgba(11,16,32,.70)),
+      url('assets/bg-hana-bw.png') center / cover no-repeat,
       linear-gradient(180deg, var(--bg), var(--bg2));
   }
-    }
+}
+
 
     .wrap{max-width:1100px; width:100%;}
     header{display:flex; align-items:center; gap:18px;}
