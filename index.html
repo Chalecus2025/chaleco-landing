@@ -6,22 +6,26 @@
   <title>Chaleco Studios – Hana & Mio</title>
   <meta name="description" content="Chaleco Studios: música forjada entre anime, rock y poesía. Escucha los singles Hana y Mio en Spotify, Amazon Music y más.">
 
-<!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="Chaleco Studios – Hana & Mio">
-<meta property="og:description" content="Dos singles, una historia. Hana y Mio ya disponibles.">
-<meta property="og:image" content="https://www.chalecostudios.com/assets/bg-hana-bw.png">
-<meta property="og:url" content="https://chalecostudios.com/">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Chaleco Studios – Hana & Mio">
+  <meta property="og:description" content="Dos singles, una historia. Hana y Mio ya disponibles.">
+  <meta property="og:image" content="https://chalecostudios.com/assets/bg-hana-bw.png">
+  <meta property="og:url" content="https://chalecostudios.com/">
 
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Chaleco Studios – Hana & Mio">
-<meta name="twitter:description" content="Anime vibes + Rock. Escúchalos ahora.">
-<meta name="twitter:image" content="https://www.chalecostudios.com/assets/bg-hana-bw.png">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Chaleco Studios – Hana & Mio">
+  <meta name="twitter:description" content="Anime vibes + Rock. Escúchalos ahora.">
+  <meta name="twitter:image" content="https://chalecostudios.com/assets/bg-hana-bw.png">
 
   <style>
     body { margin:0; font-family:Arial, sans-serif; color:#fff; background:#000; }
-    header { background:url('assets/banner-2660x1140.jpg') center/cover no-repeat; height:60vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; }
+    /* Usa el asset que EXISTE */
+    header {
+      background:url('https://chalecostudios.com/assets/bg-hana-bw.png') center/cover no-repeat;
+      height:60vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;
+    }
     header h1 { font-size:3em; margin:0; }
     header p { font-size:1.2em; margin:10px 0 20px; }
     header a { background:#e63946; color:#fff; padding:12px 25px; margin:5px; text-decoration:none; border-radius:6px; font-weight:bold; }
@@ -31,10 +35,7 @@
     .card { background:#111; border-radius:10px; padding:20px; flex:1 1 45%; text-align:center; }
     .card img { width:100%; max-width:300px; border-radius:10px; margin-bottom:15px; }
     footer { text-align:center; padding:20px; font-size:0.9em; background:#111; }
-    @media(max-width:768px){
-      header h1{font-size:2em;}
-      .card{flex:1 1 100%;}
-    }
+    @media(max-width:768px){ header h1{font-size:2em;} .card{flex:1 1 100%;} }
   </style>
 </head>
 <body>
@@ -49,18 +50,23 @@
     <h2>Releases</h2>
     <div class="releases">
       <div class="card" id="hana">
-       <img src="https://chalecostudios.com/assets/Hana_portada_cancion.png" alt="Portada Hana">
+        <!-- OJO: nombre real del archivo + extensión -->
+        <img src="https://chalecostudios.com/assets/Hana_portada_cancion.png"
+             alt="Portada del single Hana - Chaleco Studios" width="300" height="300" loading="lazy">
         <h3>🌸 Hana</h3>
         <p>Un viaje de 3:58 entre belleza y melancolía.</p>
-        <a href="https://open.spotify.com/intl-es/album/1mBjnL0465G4mr3KAkLVZk" target="_blank">Spotify</a>
-        <a href="https://music.amazon.it/albums/B0FSMRP8K5?marketplaceId=APJ6JRA9NG5V4&musicTerritory=IT&ref=dm_sh_5FPdsUSbYlsV06rUmik7Q9Jb2&trackAsin=B0FSMZ4TQK" target="_blank">Amazon Music</a>
+        <a href="https://open.spotify.com/intl-es/album/1mBjnL0465G4mr3KAkLVZk" target="_blank" rel="noopener">Spotify</a>
+        <a href="https://music.amazon.it/albums/B0FSMRP8K5?marketplaceId=APJ6JRA9NG5V4&musicTerritory=IT&ref=dm_sh_5FPdsUSbYlsV06rUmik7Q9Jb2&trackAsin=B0FSMZ4TQK" target="_blank" rel="noopener">Amazon Music</a>
       </div>
+
       <div class="card" id="mio">
-        <img src="assets/mio-cover.jpg" alt="Portada del single Mio - Chaleco Studios">
+        <!-- Renombrá tu archivo a algo simple y consistente; ejemplo: mio-portada-cancion.jpg -->
+        <img src="https://chalecostudios.com/assets/mio-portada-cancion.jpg"
+             alt="Portada del single Mio - Chaleco Studios" width="300" height="300" loading="lazy">
         <h3>🔥 Mio</h3>
         <p>Fuerza y renacimiento; el pulso sube y la historia avanza.</p>
-        <a href="https://open.spotify.com/intl-es/album/2KkKvL4hmWbfBKqmbbr0vt" target="_blank">Spotify</a>
-        <a href="https://music.amazon.it/albums/B0FSMS9M4B?marketplaceId=APJ6JRA9NG5V4&musicTerritory=IT&ref=dm_sh_6mXApv5vCFaRicxsmPD4W8LCw&trackAsin=B0FSMY5VF3" target="_blank">Amazon Music</a>
+        <a href="https://open.spotify.com/intl-es/album/2KkKvL4hmWbfBKqmbbr0vt" target="_blank" rel="noopener">Spotify</a>
+        <a href="https://music.amazon.it/albums/B0FSMS9M4B?marketplaceId=APJ6JRA9NG5V4&musicTerritory=IT&ref=dm_sh_6mXApv5vCFaRicxsmPD4W8LCw&trackAsin=B0FSMY5VF3" target="_blank" rel="noopener">Amazon Music</a>
       </div>
     </div>
   </section>
@@ -77,8 +83,7 @@
   </section>
 
   <footer>
-    © Chaleco Studios 2025 — FORJADO, NO COMPRADO.  
-    <br>
+    © Chaleco Studios 2025 — FORJADO, NO COMPRADO. <br>
     <a href="mailto:redes@chalecostudios.com" style="color:#e63946;">Contacto</a>
   </footer>
 </body>
