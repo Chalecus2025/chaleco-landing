@@ -1,266 +1,85 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chaleco Studios — Próximo lanzamiento</title>
-  <meta name="description" content="Chaleco Studios: música original + animación estilo anime. Estreno 12/09." />
-  <meta property="og:title" content="Chaleco Studios" />
-  <meta property="og:description" content="Música + Anime. Estreno 12/09." />
-  <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#e11d48" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chaleco Studios – Hana & Mio</title>
+  <meta name="description" content="Chaleco Studios: música forjada entre anime, rock y poesía. Escucha los singles Hana y Mio en Spotify, Amazon Music y más.">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Chaleco Studios – Hana & Mio">
+  <meta property="og:description" content="Dos singles, una historia. Hana y Mio ya disponibles.">
+  <meta property="og:image" content="https://chalecostudios.com/assets/chaleco-banner.jpg">
+  <meta property="og:url" content="https://chalecostudios.com/">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Chaleco Studios – Hana & Mio">
+  <meta name="twitter:description" content="Anime vibes + Rock. Escúchalos ahora.">
+  <meta name="twitter:image" content="https://chalecostudios.com/assets/chaleco-banner.jpg">
+
   <style>
-    :root{
-      --bg:#0b1020;        /* azul noche */
-      --bg2:#0d132a;
-      --fg:#e6e9f2;        /* texto */
-      --muted:#93a0b4;     /* texto secundario */
-      --accent:#e11d48;    /* rojo sakura */
-      --accent-2:#f59e0b;  /* dorado obi */
-      --card:#121833;
-      --ring: 0 0 0 2px var(--accent);
+    body { margin:0; font-family:Arial, sans-serif; color:#fff; background:#000; }
+    header { background:url('assets/banner-2660x1140.jpg') center/cover no-repeat; height:60vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; }
+    header h1 { font-size:3em; margin:0; }
+    header p { font-size:1.2em; margin:10px 0 20px; }
+    header a { background:#e63946; color:#fff; padding:12px 25px; margin:5px; text-decoration:none; border-radius:6px; font-weight:bold; }
+    section { padding:60px 20px; max-width:1100px; margin:auto; }
+    h2 { font-size:2em; margin-bottom:20px; text-align:center; }
+    .releases { display:flex; flex-wrap:wrap; justify-content:space-around; gap:20px; }
+    .card { background:#111; border-radius:10px; padding:20px; flex:1 1 45%; text-align:center; }
+    .card img { width:100%; max-width:300px; border-radius:10px; margin-bottom:15px; }
+    footer { text-align:center; padding:20px; font-size:0.9em; background:#111; }
+    @media(max-width:768px){
+      header h1{font-size:2em;}
+      .card{flex:1 1 100%;}
     }
-    *{box-sizing:border-box}
-html,body{height:100%}
-
-body{
-  margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
-  color:var(--fg);
-
-  /* Fondo global: overlay + TU imagen + gradiente */
-  background:
-    linear-gradient(rgba(11,16,32,.58), rgba(11,16,32,.66)),        /* overlay oscuro */
-    url('assets/bg-hana-bw.png') 70% center / cover no-repeat fixed,/* <-- ruta+posicion */
-    linear-gradient(180deg, var(--bg), var(--bg2));
-
-  display:flex; align-items:center; justify-content:center; padding:32px;
-}
-
-/* En móviles quitamos el fixed para evitar tirones y centramos */
-@media (max-width: 860px){
-  body{
-    background:
-      linear-gradient(rgba(11,16,32,.58), rgba(11,16,32,.70)),
-      url('assets/bg-hana-bw.png') center / cover no-repeat,
-      linear-gradient(180deg, var(--bg), var(--bg2));
-  }
-}
-
-
-    .wrap{max-width:1100px; width:100%;}
-    header{display:flex; align-items:center; gap:18px;}
-    .logo{display:grid; place-items:center; width:64px; height:64px; border-radius:16px;
-          background:linear-gradient(145deg,var(--accent),#b21a3a); box-shadow:0 10px 30px rgba(225,17,72,.25)}
-    .logo svg{width:42px; height:42px; fill:#fff}
-    .brand h1{margin:0; font-size:clamp(28px,4vw,44px); letter-spacing:.5px}
-    .brand p{margin:4px 0 0; color:var(--muted)}
-
-    .hero{margin:32px 0 24px; display:grid; grid-template-columns: 1.2fr .8fr; gap:24px}
-    @media (max-width: 860px){ .hero{grid-template-columns:1fr} }
-
-    .panel{
-      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.02));
-      border:1px solid rgba(255,255,255,.05);
-      border-radius:20px; padding:24px; box-shadow: 0 10px 30px rgba(0,0,0,.25);
-      backdrop-filter: blur(6px);
-    }
-    .kicker{color:var(--accent-2); font-weight:600; letter-spacing:.08em; text-transform:uppercase; font-size:12px}
-    .title{font-size:clamp(24px,3.2vw,36px); margin:6px 0 10px}
-    .subtitle{color:var(--muted); margin:0 0 18px}
-
-    .countdown{display:flex; gap:12px; flex-wrap:wrap}
-    .cd{
-      flex: 1 1 110px; min-width:110px; text-align:center; padding:14px 10px; border-radius:14px;
-      background:var(--card); border:1px solid rgba(255,255,255,.06);
-    }
-    .cd b{display:block; font-size:clamp(24px,4vw,34px)}
-    .cd span{color:var(--muted); font-size:12px; letter-spacing:.08em; text-transform:uppercase}
-
-    .cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
-    .btn{appearance:none; border:none; cursor:pointer; border-radius:14px; padding:12px 16px; font-weight:600;
-         color:#111; background:#fff; transition:.2s transform, .2s box-shadow}
-    .btn:hover{transform:translateY(-2px); box-shadow:0 12px 24px rgba(0,0,0,.25)}
-    .btn--primary{background:linear-gradient(90deg,var(--accent),#fb7185); color:#fff}
-    .btn--ghost{background:transparent; color:var(--fg); border:1px solid rgba(255,255,255,.18)}
-    /* —— PATCH MOBILE Chaleco Studios ——————————————————— */
-/* Pegar debajo de tu CSS actual, sin borrar lo anterior */
-@media (max-width: 860px){
-
-  /* respiración lateral en móvil */
-  .wrap{ padding: 0 12px; width: 100%; }
-
-  /* panel a ancho completo y menos vidrio */
-  .panel{
-    width: 100%;
-    border-radius: none;
-    padding: 16px;
-    box-shadow: none;
-    backdrop-filter: none;
-    background: transparent; /* si lo querés limpio: 'transparent' */
-  }
-
-  /* hero en una sola columna ya lo tenés, ajusto gaps */
-  .hero{ margin: 16px 0; gap: 16px; }
-
-  /* countdown en 2 columnas y más compacto */
-  .countdown{
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
-  }
-  .cd{
-    flex: 1 1 auto;
-    min-width: unset;
-    padding: 12px 10px;
-    border-radius: 12px;
-  }
-  .cd b{ font-size: 28px; line-height: 1; }
-  .cd span{ font-size: 11px; letter-spacing: .06em; }
-
-  /* CTAs en columna, full-width */
-  .cta{
-    flex-direction: column;
-    align-items: stretch;
-    gap: 12px;
-    margin-top: 14px;
-  }
-  .cta .btn{
-    width: 100%;
-    padding: 12px 16px;
-    border-radius: 10px !important;
-  }
-
-  /* un poco de aire antes de la ilustración inferior */
-  section, .section, .hero{ margin-bottom:16px; }
-}
-
-
-    /* Social icons row */
-    .social{display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-top:10px}
-    .social a{display:inline-flex; width:36px; height:36px; align-items:center; justify-content:center;
-    border-radius:9999px; border:1px solid rgba(255,255,255,.18);
-    background:rgba(255,255,255,.04); transition:.2s transform,.2s box-shadow,.2s opacity}
-    .social a:hover{transform:translateY(-1px); box-shadow:0 8px 18px rgba(0,0,0,.25)}
-    .social svg{width:18px; height:18px; fill:#fff; opacity:.92}
-
-
-    .card-right{position:relative; overflow:hidden}
-    .petal{position:absolute; width:10px; height:10px; background: radial-gradient(circle at 30% 30%, #ffd1de, #ff6b8b);
-           border-radius:60% 40% 60% 40%; opacity:.75; filter: blur(.2px); animation: fall 12s linear infinite}
-    .petal:nth-child(2){left:25%; animation-delay: -2s}
-    .petal:nth-child(3){left:55%; animation-delay: -5s}
-    .petal:nth-child(4){left:78%; animation-delay: -3s}
-    .petal:nth-child(5){left:90%; animation-delay: -7s}
-    @keyframes fall{ 0%{ transform: translateY(-20px) rotate(0deg) } 100%{ transform: translateY(420px) rotate(360deg) } }
-
-    footer{margin-top:28px; color:var(--muted); font-size:13px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap}
-    .links a{color:#fff; text-decoration:none; opacity:.9}
-    .links a:hover{opacity:1; text-decoration:underline}
-    .divider{height:1px; background:linear-gradient(90deg, transparent, rgba(255,255,255,.08), transparent); margin:18px 0}
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="logo" aria-label="Chaleco Studios">
-        <!-- Condor sobre Monte Fuji (SVG simple) -->
-        <svg viewBox="0 0 64 64" role="img" aria-hidden="true">
-          <path d="M6 48h52l-10-8-8 3-7-9-7 9-8-3-12 8z" fill="rgba(255,255,255,.9)"/>
-          <path d="M18 30c10 0 12-8 14-8s4 8 14 8c-8 2-10 6-14 6s-6-4-14-6z" fill="rgba(255,255,255,.9)"/>
-        </svg>
+  <header>
+    <h1>Chaleco Studios</h1>
+    <p>Música forjada entre anime, rock y poesía</p>
+    <a href="#hana">▶️ Escuchar Hana</a>
+    <a href="#mio">▶️ Escuchar Mio</a>
+  </header>
+
+  <section id="releases">
+    <h2>Releases</h2>
+    <div class="releases">
+      <div class="card" id="hana">
+        <img src="assets/hana-cover.jpg" alt="Hana Cover">
+        <h3>🌸 Hana</h3>
+        <p>Un viaje de 3:58 entre belleza y melancolía.</p>
+        <a href="LINK_SPOTIFY_HANA" target="_blank">Spotify</a>
+        <a href="LINK_AMAZON_HANA" target="_blank">Amazon Music</a>
       </div>
-      <div class="brand">
-        <h1>Chaleco Studios</h1>
-        <p>música original + animación estilo anime</p>
+      <div class="card" id="mio">
+        <img src="assets/mio-cover.jpg" alt="Mio Cover">
+        <h3>🔥 Mio</h3>
+        <p>Fuerza y renacimiento; el pulso sube y la historia avanza.</p>
+        <a href="LINK_SPOTIFY_MIO" target="_blank">Spotify</a>
+        <a href="LINK_AMAZON_MIO" target="_blank">Amazon Music</a>
       </div>
-    </header>
+    </div>
+  </section>
 
-    <section class="hero">
-      <div class="panel">
-        <div class="kicker">Próximo lanzamiento</div>
-        <h2 class="title">12 de septiembre — Dos canciones nuevas</h2>
-        <p class="subtitle">Blackout → Big Bang. El 12/09 liberamos música y visuales. Encendé la campana y prepárate.</p>
+  <section id="universe">
+    <h2>Universe</h2>
+    <p><strong>Hana</strong>: la flor antes de la tormenta. Cuida, espera, resiste.</p>
+    <p><strong>Mio</strong>: la decisión encarnada. Deja de pedir permiso.</p>
+  </section>
 
-        <div class="countdown" id="countdown">
-          <div class="cd"><b id="d">–</b><span>días</span></div>
-          <div class="cd"><b id="h">–</b><span>horas</span></div>
-          <div class="cd"><b id="m">–</b><span>min</span></div>
-          <div class="cd"><b id="s">–</b><span>seg</span></div>
-        </div>
+  <section id="bio">
+    <h2>Bio</h2>
+    <p>Música forjada entre anime, rock y poesía. Chaleco Studios crea canciones originales que viven en un universo visual propio — cerezos, sombras y personajes que evolucionan pista a pista.</p>
+  </section>
 
-        <div class="cta">
-          <a class="btn btn--primary" href="https://youtube.com/@chalecostudio" target="_blank" rel="noopener">YouTube</a>
-          <a class="btn btn--ghost"   href="https://open.spotify.com/user/chalecus?si=43fffe473dc24cad" target="_blank" rel="noopener">Spotify</a>
-          <a class="btn"              href="mailto:info@chalecostudios.com">Contacto</a>
-          <div class="social" aria-label="Redes sociales">
-          <!-- Patreon -->
-          <a href="https://patreon.com/chalecostudios" target="_blank" rel="noopener" aria-label="Patreon">
-          <svg viewBox="0 0 24 24"><path d="M3 3h4v18H3V3zm9 0a9 9 0 110 18 9 9 0 010-18z"/></svg>
-          </a>
-          <!-- Instagram -->
-          <a href="https://instagram.com/chalecostudios" target="_blank" rel="noopener" aria-label="Instagram">
-          <svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 5a5 5 0 100 10 5 5 0 000-10zm6-1a1 1 0 100 2 1 1 0 000-2zM12 9a3 3 0 110 6 3 3 0 010-6z"/></svg>
-          </a>
-          <!-- X / Twitter -->
-          <a href="https://x.com/@chalecostudios" target="_blank" rel="noopener" aria-label="X">
-          <svg viewBox="0 0 24 24"><path d="M3 3l8.4 9.7L3 21h2.6l6.7-6.9L18.9 21H21l-8-9.5L20.7 3H18.2l-6.1 6.4L6.2 3H3z"/></svg>
-          </a>
-          <!-- TikTok -->
-          <a href="https://www.tiktok.com/@chalecostudios" target="_blank" rel="noopener" aria-label="TikTok">
-          <svg viewBox="0 0 24 24"><path d="M14 3h3a5 5 0 005 5v3a8 8 0 01-8-8v12a6 6 0 11-6-6h1v3h-1a3 3 0 103 3V3z"/></svg>
-          </a>
-      </div>
-
-
-        </div>
-      </div>
-
-      <div class="panel card-right" aria-hidden="true">
-        <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div>
-        <div style="display:grid;place-items:center;min-height:280px">
-          <svg viewBox="0 0 340 180" width="100%" height="100%">
-            <defs>
-              <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
-                <stop offset="0%" stop-color="#fff" stop-opacity=".6"/>
-                <stop offset="100%" stop-color="#fff" stop-opacity=".1"/>
-              </linearGradient>
-            </defs>
-            <rect x="0" y="0" width="340" height="180" fill="none"/>
-            <path d="M10 150 Q 80 60 170 120 T 330 150 L 10 150 Z" fill="url(#g1)"/>
-            <circle cx="270" cy="45" r="14" fill="#f59e0b"/>
-            <path d="M40 120 C 110 105 150 80 170 70 C 190 80 230 105 300 120" stroke="#e5e7eb" stroke-width="3" fill="none" opacity=".9"/>
-            <path d="M50 60 q 40 10 60 0 q 20 -8 40 0 q 20 8 60 0" stroke="#e5e7eb" stroke-width="2" fill="none" opacity=".6"/>
-          </svg>
-        </div>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <footer>
-      <span>© <span id="y"></span> Chaleco Studios — Todos los derechos reservados.</span>
-      <span class="links">Hecho con ❤️ y pétalos de sakura.</span>
-    </footer>
-  </div>
-
-  <script>
-    // Cuenta regresiva al 12/09 local (00:00)
-    const target = new Date('2025-09-12T00:00:00');
-    const $ = (id)=>document.getElementById(id);
-    function tick(){
-      const now = new Date();
-      let diff = Math.max(0, target - now);
-      const s = Math.floor(diff/1000)%60;
-      const m = Math.floor(diff/1000/60)%60;
-      const h = Math.floor(diff/1000/60/60)%24;
-      const d = Math.floor(diff/1000/60/60/24);
-      $('d').textContent = String(d);
-      $('h').textContent = String(h).padStart(2,'0');
-      $('m').textContent = String(m).padStart(2,'0');
-      $('s').textContent = String(s).padStart(2,'0');
-    }
-    tick(); setInterval(tick, 1000);
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+  <footer>
+    © Chaleco Studios 2025 — FORJADO, NO COMPRADO.  
+    <br>
+    <a href="mailto:hola@chalecostudios.com" style="color:#e63946;">Contacto</a>
+  </footer>
 </body>
 </html>
